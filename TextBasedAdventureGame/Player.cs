@@ -43,10 +43,10 @@ namespace TextBasedAdventureGame
 
             if (item.ToString() == "Leather Satchel") MaxInventory += 4;
             if (item.ToString() == "Tattered canvas bag") MaxInventory += 3;
-            Calc();
             if(inventorySize + item.Size <= MaxInventory)
             {
                 Inventory.Add(item);
+                Calc();
                 return true;
             }
             return false;
@@ -64,6 +64,7 @@ namespace TextBasedAdventureGame
         }
         public void Calc() 
         {
+            inventorySize = 0;
             foreach(var item in Inventory)
             {
                 inventorySize += item.Size;

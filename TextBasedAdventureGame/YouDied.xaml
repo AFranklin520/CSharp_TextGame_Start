@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextBasedAdventureGame"
         mc:Ignorable="d"
-        Title="YouDied" Height="400" Width="600">
+        Title="Game Over" Height="400" Width="600">
     <Grid x:Name="grid">
         <Grid.Background>
             <ImageBrush ImageSource="/FirstTime.jpg"/>
@@ -25,7 +25,11 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="txbDescription" HorizontalAlignment="Left" Margin="86,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452" Background="{x:Null}" Height="103" FontSize="16" FontFamily="Imprint MT Shadow" Foreground="White"/>
+        <TextBox x:Name="txbDescription" HorizontalAlignment="Left" Margin="86,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452" Background="{x:Null}" Height="103" FontSize="16" FontFamily="Imprint MT Shadow" Foreground="White" FontWeight="Normal">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
 
     </Grid>
 </Window>

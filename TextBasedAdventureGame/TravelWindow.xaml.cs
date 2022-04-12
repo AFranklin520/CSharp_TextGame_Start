@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -60,7 +61,7 @@ namespace TextBasedAdventureGame
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lbTraveOptions_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private async void lbTraveOptions_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             TravelOption to = (TravelOption)lbTraveOptions.SelectedItem;
             if(to.Location == game.Locations[16] || to.Location == game.Locations[21] || to.Location == game.Locations[23] || to.Location == game.Locations[24] || to.Location == game.Locations[26])
@@ -69,8 +70,7 @@ namespace TextBasedAdventureGame
                 w.txbDescription.Text = to.Location.Description;
                 w.ShowDialog();
 
-                string Choice = w.Choice;
-                if (Choice == "Again")
+                if (w.Choice == "Again")
                 {
                     game = new Map();
                     P1 = new Player(game.Locations[0]);
@@ -83,6 +83,8 @@ namespace TextBasedAdventureGame
                     lbItems.Visibility = Visibility.Collapsed;
                     lbTraveOptions.Visibility = Visibility.Collapsed;
                     txbStatus.Text = "GAME OVER";
+                    await Task.Delay(3000);
+                    Close();
                 }
             }
             else if (to.Location == game.Locations[22])
