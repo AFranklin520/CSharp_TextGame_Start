@@ -40,12 +40,13 @@ namespace TextBasedAdventureGame
             /// <summary>
             /// Calculates current inventory size and adds new item if enough size, else returns false
             /// </summary>
+
+            if (item.ToString() == "Leather Satchel") MaxInventory += 4;
+            if (item.ToString() == "Tattered canvas bag") MaxInventory += 3;
             Calc();
             if(inventorySize + item.Size <= MaxInventory)
             {
                 Inventory.Add(item);
-                if (item.ToString() == "Leather Satchel") MaxInventory += 4;
-                if (item.ToString() == "Tattered canvas bag") MaxInventory += 3;
                 return true;
             }
             return false;

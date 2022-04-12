@@ -74,6 +74,7 @@ namespace TextBasedAdventureGame
             PortableHidingPlace Satchel = new PortableHidingPlace("Leather Satchel"); //Satchel adds + 4 to player's MaxInventory without mouse skeleton.
             InventoryItem deadMouse = new InventoryItem("Petrified mouse skeleton");
             deadMouse.Size = 1;
+            Satchel.Size = 1;
             Satchel.HiddenObject = deadMouse;
             Locations[9].Items.Add(Satchel);
             
@@ -101,6 +102,7 @@ namespace TextBasedAdventureGame
             PortableHidingPlace Bible = new PortableHidingPlace("Hardcover Bible");
             InventoryItem porn = new InventoryItem("One of those pictures of a woman...you know, like from France...");
             NightStand.HiddenObject = Bible;
+            Bible.Size = 2;
             porn.Size = 1;
             Bible.HiddenObject = porn;
             Locations[13].Items.Add(NightStand);
@@ -125,6 +127,7 @@ namespace TextBasedAdventureGame
             PortableHidingPlace canvasBag = new PortableHidingPlace("Tattered canvas bag"); //Players MaxInventory += 3
             InventoryItem drinkingCup = new InventoryItem("Drinking mug");
             drinkingCup.Size = 2;
+            canvasBag.Size = 1;
             canvasBag.HiddenObject = drinkingCup;
             Locations[15].Items.Add(canvasBag);
 
